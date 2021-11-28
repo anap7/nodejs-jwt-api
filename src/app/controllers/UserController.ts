@@ -4,6 +4,13 @@ import { getRepository } from 'typeorm';
 import User from '../models/User';
 
 class UserController {
+  index(req: Request, res: Response) {
+    return res.send({
+      userId: req.userId,
+      sucessMessage: "👻 💀 ☠️ 👽 👾 🤖 🎃 Legal, você tá autenticado fia da mãe 👻 💀 ☠️ 👽 👾 🤖 🎃"
+    });
+  }
+
   async store(req: Request, res: Response) {
     const repository = getRepository(User);
     const { email, password } = req.body;
@@ -11,6 +18,8 @@ class UserController {
     const userExists = await repository.findOne({ where: { email }});
 
     if (userExists) {
+      /*O status de resposta 409 Conflict indica que a solicitação atual 
+      conflitou com o recurso que está no servidor. */
       return res.sendStatus(409);
     }
     

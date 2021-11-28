@@ -1,6 +1,8 @@
+require('dotenv').config();
 //Para que possamos usar os recursos do typeORM usamos, temos que fazer a inicialização global
 import "reflect-metadata";
 import express from 'express';
+
 
 import './database/connect';
 import routes from './routes';

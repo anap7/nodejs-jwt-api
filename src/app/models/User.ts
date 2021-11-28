@@ -1,15 +1,23 @@
-import { Entity, PrimaryGeneratedColumn, Column, PrimaryColumn } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, BeforeInsert, BeforeUpdate } from 'typeorm';
+import bcrypt from 'bcryptjs';
 
 @Entity('users')
 class User {
   @PrimaryGeneratedColumn("uuid")
   id: string;
 
+  //@Column com parâmetro vazio já atribui como valor varchar
   @Column()
   email: string;
 
   @Column()
   password: string;
+
+  @BeforeInsert()
+  @BeforeUpdate()
+  hashPassword() {
+    this.password = bcrypt.hashSync(this.password, 8); //Encriptando com um salt de 8 
+  }
 }
 
 export default User;
