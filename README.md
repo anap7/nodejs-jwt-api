@@ -3,6 +3,10 @@
 API feita através do tutorial: [Criando uma API de autenticação JWT com TypeScript e TypeORM ](https://www.youtube.com/watch?v=TjAXBLszCb0&ab_channel=MateusSilva)do
 canal: [Mateus Silva](https://www.youtube.com/channel/UCNckxUYl117w3hfgoj3DbWg)
 
+
+## Rotas de teste
+Deixei disponível o arquivo **rotas-de-teste-insomnia**, utilize o Insomnia para importar esse arquivo e ter todas as rotas de testes configuradas para utilizar a API.
+
 ## Instalando as dependências
 
 Iniciando o projeto
